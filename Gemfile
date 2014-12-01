@@ -46,3 +46,8 @@ gem 'bootstrap-sass', '~> 3.3.1.0'
 
 # Twitter boostrap suggest: is a tool to parse CSS and add vendor prefixes to CSS rules using values from the Can I Use. This gem provides Ruby and Ruby on Rails integration with this JavaScript tool.
 gem 'autoprefixer-rails'
+
+# Gem to unit testing
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+end
