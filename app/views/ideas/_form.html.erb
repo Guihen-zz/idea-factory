@@ -11,39 +11,38 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'form-control'%>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :platform %><br>
-    <%= f.text_field :platform %>
+    <%= f.text_field :platform, class: 'form-control'%>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :architecture %><br>
-    <%= f.text_field :architecture %>
+    <%= f.text_field :architecture, class: 'form-control'%>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :tools %><br>
-    <%= f.text_field :tools %>
+    <%= f.text_field :tools, class: 'form-control'%>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :hardware %><br>
-    <%= f.text_field :hardware %>
+    <%= f.text_field :hardware, class: 'form-control'%>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :effort %><br>
-    <%= f.text_field :effort %>
+    <%= f.text_field :effort, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :deadline %><br>
-    <%= f.date_select :deadline %>
+    <%= f.date_select :deadline, class: 'form-control' %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  
+  <%= f.submit class: 'btn btn-success' %>
 <% end %>
