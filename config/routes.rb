@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'ideas#index'
 
+  devise_for :users
+
   resources :ideas
 
   # The priority is based upon order of creation: first created -> highest priority.

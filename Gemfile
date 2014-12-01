@@ -51,3 +51,6 @@ gem 'autoprefixer-rails'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
 end
+
+# Devise is a flexible authentication solution for Rails based on Warden.
+gem 'devise'
