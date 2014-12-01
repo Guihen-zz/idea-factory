@@ -40,3 +40,9 @@ gem 'spring',        group: :development
 
 # Used by heroku
 gem 'rails_12factor', group: :production
+
+# Twitter bootstrap: Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
+gem 'bootstrap-sass', '~> 3.3.1.0'
+
+# Twitter boostrap suggest: is a tool to parse CSS and add vendor prefixes to CSS rules using values from the Can I Use. This gem provides Ruby and Ruby on Rails integration with this JavaScript tool.
+gem 'autoprefixer-rails'
