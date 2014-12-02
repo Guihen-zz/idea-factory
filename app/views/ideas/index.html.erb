@@ -22,7 +22,6 @@
 
   <tbody class="">
     <% @ideas.each do |idea| %>
-      <%= hidden_field "user_id", idea.user.id %>
       <tr>
         <td><%= idea.user.username %></td>
         <td><%= link_to idea.name, idea %></td>
