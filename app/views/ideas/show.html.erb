@@ -40,5 +40,8 @@
   <%= @idea.deadline %>
 </p>
 
-<%= link_to 'Edit', edit_idea_path(@idea), class: 'btn btn-default' %> |
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_idea_path(@idea), class: 'btn btn-default' %> |
+<% end %>
 <%= link_to 'Back', ideas_path, class: 'btn btn-default' %>
+
