@@ -1,5 +1,8 @@
 class IdeasController < ApplicationController
-  before_action :set_idea, only: [:show, :edit, :update, :destroy]
+  before_action :set_idea, only: [:show, :update]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :verify_ownership, only: [:edit, :destroy]
+
 
   # GET /ideas
   # GET /ideas.json
@@ -63,6 +66,12 @@ class IdeasController < ApplicationController
   end
 
   private
+    def verify_ownership
+      set_idea
+      if @idea.user != current_user
+        redirect_to :ideas
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_idea
       @idea = Idea.find(params[:id])
