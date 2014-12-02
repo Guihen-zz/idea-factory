@@ -11,7 +11,11 @@
       <th>Hardware</th>
       <th>Effort</th>
       <th>Deadline</th>
-      <th colspan="3"></th>
+      <% if user_signed_in? %>
+        <th colspan="3"></th>
+      <% else %>
+        <th></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -26,9 +30,13 @@
         <td><%= idea.hardware %></td>
         <td><%= idea.effort %></td>
         <td><%= idea.deadline %></td>
+
         <td><%= link_to 'Show', idea, class: 'btn btn-default' %></td>
-        <td><%= link_to 'Edit', edit_idea_path(idea), class: 'btn btn-default' %></td>
-        <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+
+        <% if user_signed_in? %>
+          <td><%= link_to 'Edit', edit_idea_path(idea), class: 'btn btn-default' %></td>
+          <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
