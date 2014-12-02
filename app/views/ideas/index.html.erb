@@ -3,7 +3,8 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>User</th>
+      <th>Idea</th>
       <th>Description</th>
       <th>Platform</th>
       <th>Architecture</th>
@@ -22,6 +23,7 @@
   <tbody class="">
     <% @ideas.each do |idea| %>
       <tr>
+        <td><%= idea.user.username %></td>
         <td><%= idea.name %></td>
         <td><%= idea.description %></td>
         <td><%= idea.platform %></td>
