@@ -7,7 +7,8 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
-    @ideas = Idea.all
+    @my_ideas = Idea.where(user_id: current_user) if user_signed_in?
+    @ideas = Idea.all - (@my_ideas || [])
   end
 
   # GET /ideas/1

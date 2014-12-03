@@ -20,7 +20,8 @@
         <td><%= project.status %></td>
         <td><%= project.created_at %></td>
         <td><%= time_ago_in_words project.updated_at %></td>
-         <% if user_signed_in?%>
+
+        <% if user_signed_in?%>
           <% if my_projects %>
             <td><%= link_to 'Edit', edit_project_path(project), class: 'btn btn-default' %></td>
             <td><%= link_to 'Unsubscribe', unsubscribe_url(project.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>

@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
-  delete 'users/project/:id/unsubscribe' => 'users#unsubscribe', as: :unsubscribe
-  post 'users/project/:id/subscribe'   => 'users#subscribe',   as: :subscribe
-
-  resources :projects
-
   root 'ideas#index'
 
   devise_for :users
 
   resources :ideas
+
+  resources :projects
+
+  delete 'users/project/:id/unsubscribe' => 'users#unsubscribe', as: :unsubscribe
+  post   'users/project/:id/subscribe'   => 'users#subscribe',   as: :subscribe
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

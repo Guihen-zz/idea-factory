@@ -1,50 +1,14 @@
-<h1>Ideas</h1>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Idea</th>
-      <th>Description</th>
-      <th>Platform</th>
-      <!-- <th>Architecture</th> -->
-      <!-- <th>Tools</th> -->
-      <!-- <th>Hardware</th> -->
-      <th>Effort</th>
-      <th>Deadline</th>
-      <% if user_signed_in? %>
-        <th colspan="2"></th>
-      <% else %>
-        <th></th>
-        <th></th>
-      <% end %>
-    </tr>
-  </thead>
+<% if user_signed_in? %>
+  <h2>My Ideas</h2>
+  <%= render partial: "ideas", locals: { ideas: @my_ideas, my_ideas:  true } %>
+  <br>
+  <h2>Other Ideas</h2>
+<% else %>
+  <h2>All Ideas</h2>
+<% end %>
 
-  <tbody>
-    <% @ideas.each do |idea| %>
-      <tr>
-        <td><%= (idea.user) ? idea.user.username : "null"%></td>
-        <td><%= link_to idea.name, idea %></td>
-        <td><%= idea.description %></td>
-        <td><%= idea.platform %></td>
-        <!-- <td><%= idea.architecture %></td> -->
-        <!-- <td><%= idea.tools %></td> -->
-        <!-- <td><%= idea.hardware %></td> -->
-        <td><%= idea.effort %></td>
-        <td><%= idea.deadline %></td>
-
-        <% if user_signed_in? and (current_user == idea.user or idea.user.nil?) %>
-          <td><%= link_to 'Edit', edit_idea_path(idea), class: 'btn btn-default' %></td>
-          <td><%= link_to 'Delete', idea, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
-        <% else %>
-          <td></td>
-          <td></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render partial: "ideas", locals: { ideas: @ideas, my_ideas:  false } %>
 
 <br>
 
