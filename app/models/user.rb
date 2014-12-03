@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable
 
   has_many :ideas
+  has_and_belongs_to_many :projects
 end
