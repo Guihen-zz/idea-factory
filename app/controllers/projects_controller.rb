@@ -22,6 +22,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.users << current_user
     @project.save
     respond_with(@project)
   end
@@ -42,6 +43,6 @@ class ProjectsController < ApplicationController
     end
 
     def project_params
-      params.require(:project).permit(:name, :status)
+      params.require(:project).permit(:name, :status, :idea_id)
     end
 end
