@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'ideas#index'
+  get 'static_pages/home', as: :home
+
+  # root 'ideas#index'
+  root 'static_pages#home'
 
   devise_for :users
 
