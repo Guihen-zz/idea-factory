@@ -18,14 +18,13 @@
         <td><%= link_to project.idea.name, idea_path(project.idea) %></td>
         <td><%= project.status %></td>
         <td><%= time_ago_in_words project.updated_at %></td>
-         <% if user_signed_in? and project.users.include? current_user %>
+         <% if user_signed_in?%>
           <% if my_projects %>
             <td></td>
-            <td><%= link_to 'Unsubscribe', unsubscribe_url(project.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+            <td><%= link_to 'unsubscribe', unsubscribe_url(project.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
           <% else %>
-
-            <td><%= link_to 'Edit', edit_project_path(project), class: 'btn btn-default' %></td>
-            <td><%= link_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+            <td></td>
+            <td><%= link_to 'subscribe', subscribe_url(project.id), method: :update, data: { confirm: 'Are you sure?' }, class: 'btn btn-success' %></td>
           <% end %>
         <% else %>
           <td></td>

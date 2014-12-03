@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   delete 'users/project/:id/unsubscribe' => 'users#unsubscribe', as: :unsubscribe
+  post 'users/project/:id/subscribe'   => 'users#subscribe',   as: :subscribe
 
   resources :projects
 
