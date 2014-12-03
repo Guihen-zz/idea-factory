@@ -7,9 +7,9 @@
 	<h2>All Projects</h2>
 <% end %>
 
-
 <%= render partial: "projects", locals: { projects: @projects, my_projects:  false } %>
 
+<br>
 <% if user_signed_in? %>
-  <%= link_to 'New Project', new_project_path, class: 'btn btn-primary' %>
+  <%= link_to 'New project ...', new_project_path, class: 'btn btn-primary' %>
 <% end %>
