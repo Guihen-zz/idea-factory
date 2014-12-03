@@ -27,10 +27,10 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li><%= link_to 'Settings', :edit_user_registration %></li>
-          <li><%= link_to 'Logout',  :destroy_user_session, data: { confirm: "Are you sure?" }, method: 'delete' %></li>
+          <li id="logout_link"><%= link_to 'Logout',  :destroy_user_session, data: { confirm: "Are you sure?" }, method: 'delete' %></li>
         <% else %>
           <li><%= link_to 'Sign up', :new_user_registration %></li>
-          <li><%= link_to 'Login',   :new_user_session %></li>
+          <li id="login_link"><%= link_to 'Login',   :new_user_session %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->

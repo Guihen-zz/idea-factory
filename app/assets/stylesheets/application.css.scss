@@ -14,6 +14,14 @@ p#notice {
 	width: 80%;
 }
 
+#logout_link a{
+	color: red;
+}
+
+#login_link a{
+	color: green;
+}
+
 #login, #registration_new, #registration_edit {
 	width: 40%;
 	margin: 0 auto;
