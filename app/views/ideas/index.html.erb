@@ -1,4 +1,4 @@
-<h1>Listing ideas</h1>
+<h1>Ideas</h1>
 
 <table class="table table-striped">
   <thead>
@@ -24,7 +24,7 @@
   <tbody>
     <% @ideas.each do |idea| %>
       <tr>
-        <td><%= idea.user.username %></td>
+        <td><%= (idea.user) ? idea.user.username : "null"%></td>
         <td><%= link_to idea.name, idea %></td>
         <td><%= idea.description %></td>
         <td><%= idea.platform %></td>
@@ -34,7 +34,7 @@
         <td><%= idea.effort %></td>
         <td><%= idea.deadline %></td>
 
-        <% if user_signed_in? and current_user == idea.user %>
+        <% if user_signed_in? and (current_user == idea.user or idea.user.nil?) %>
           <td><%= link_to 'Edit', edit_idea_path(idea), class: 'btn btn-default' %></td>
           <td><%= link_to 'Delete', idea, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
         <% else %>

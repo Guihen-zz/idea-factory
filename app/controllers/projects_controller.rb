@@ -19,6 +19,9 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    set_project
+    @project.users << current_user if not @project.users.include? current_user
+    @project.save
   end
 
   def create

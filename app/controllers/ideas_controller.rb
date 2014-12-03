@@ -22,6 +22,9 @@ class IdeasController < ApplicationController
 
   # GET /ideas/1/edit
   def edit
+    set_idea
+    @idea.user ||= current_user
+    @idea.save
   end
 
   # POST /ideas
@@ -68,7 +71,7 @@ class IdeasController < ApplicationController
   private
     def verify_ownership
       set_idea
-      if @idea.user != current_user
+      if not @idea.user.nil? and @idea.user != current_user
         redirect_to :ideas
       end
     end
