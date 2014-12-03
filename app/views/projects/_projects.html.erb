@@ -23,11 +23,11 @@
 
         <% if user_signed_in?%>
           <% if my_projects %>
-            <td><%= link_to 'Edit', edit_project_path(project), class: 'btn btn-default' %></td>
-            <td><%= link_to 'Unsubscribe', unsubscribe_url(project.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+            <td><%= link_to 'Edit', edit_project_path(project), class: 'btn btn-default btn-sm' %></td>
+            <td><%= link_to 'Unsubscribe', unsubscribe_url(project.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></td>
           <% else %>
             <td></td>
-            <td><%= link_to 'Subscribe', subscribe_url(project.id), method: :update, data: { confirm: 'Are you sure?' }, class: 'btn btn-success' %></td>
+            <td><%= link_to 'Subscribe', subscribe_url(project.id), method: :update, data: { confirm: 'Are you sure?' }, class: 'btn btn-success btn-sm' %></td>
           <% end %>
         <% else %>
           <td></td>

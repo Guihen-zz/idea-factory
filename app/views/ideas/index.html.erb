@@ -1,5 +1,6 @@
 
 <% if user_signed_in? %>
+<div class="display">
   <h2>My Ideas</h2>
   <%= render partial: "ideas", locals: { ideas: @my_ideas, my_ideas:  true } %>
   <br>
@@ -9,7 +10,7 @@
 <% end %>
 
 <%= render partial: "ideas", locals: { ideas: @ideas, my_ideas:  false } %>
-
+</div>
 <br>
 
 <% if user_signed_in? %>

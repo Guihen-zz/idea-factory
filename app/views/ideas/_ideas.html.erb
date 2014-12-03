@@ -33,8 +33,8 @@
         <td><%= idea.deadline %></td>
 
         <% if user_signed_in? and (my_ideas or idea.user.nil?) %>
-          <td><%= link_to 'Edit', edit_idea_path(idea), class: 'btn btn-default' %></td>
-          <td><%= link_to 'Delete', idea, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+          <td><%= link_to 'Edit', edit_idea_path(idea), class: 'btn btn-default btn-sm' %></td>
+          <td><%= link_to 'Delete', idea, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></td>
         <% else %>
           <td></td>
           <td></td>
