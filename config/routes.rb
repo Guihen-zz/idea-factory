@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  delete 'users/project/:id/unsubscribe' => 'users#unsubscribe', as: :unsubscribe
+
   resources :projects
 
   root 'ideas#index'

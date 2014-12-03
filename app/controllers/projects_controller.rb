@@ -4,7 +4,8 @@ class ProjectsController < ApplicationController
   respond_to :html
 
   def index
-    @projects = Project.all
+    @my_projects = User.find(current_user).projects if user_signed_in?
+    @projects = Project.all - (@my_projects || [])
     respond_with(@projects)
   end
 
