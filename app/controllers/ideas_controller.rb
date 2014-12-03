@@ -1,5 +1,5 @@
 class IdeasController < ApplicationController
-  before_action :set_idea, only: [:show, :update]
+  before_action :set_idea, only: [:show, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   before_action :verify_ownership, only: [:edit, :destroy]
 
@@ -62,10 +62,14 @@ class IdeasController < ApplicationController
   # DELETE /ideas/1
   # DELETE /ideas/1.json
   def destroy
-    @idea.destroy
-    respond_to do |format|
-      format.html { redirect_to ideas_url, notice: 'Idea was successfully destroyed.' }
-      format.json { head :no_content }
+    if not Project.where(idea_id: @idea).empty?
+      redirect_to :back, notice: "There's already a project based on this idea"
+    else
+      @idea.destroy
+      respond_to do |format|
+        format.html { redirect_to ideas_url, notice: 'Idea was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 

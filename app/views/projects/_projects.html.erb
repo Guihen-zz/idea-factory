@@ -16,7 +16,7 @@
       <tr>
         <td><%= project.users.map {|u| u.username}.join(', ') %></td>
         <td><%= link_to project.name, project %></td>
-        <td><%= link_to project.idea.name, idea_path(project.idea) %></td>
+        <td><%= link_to project.idea.name, idea_path(project.idea) if project.idea %></td>
         <td><%= project.status %></td>
         <td><%= project.created_at %></td>
         <td><%= time_ago_in_words project.updated_at %></td>
