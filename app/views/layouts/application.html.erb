@@ -10,9 +10,11 @@
 <%= render partial: '/layouts/navbar' %>
 
 <div class="container">
+	<% if notice %>
+		<p id="notice"><%= notice %></p>
+	<% end %>
 	<%= yield %>
 </div>
-
 
 </body>
 </html>
