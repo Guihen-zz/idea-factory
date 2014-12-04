@@ -23,6 +23,13 @@
           <%= link_to "projects", :projects %>
         </li>
       </ul>
+
+      <%= form_tag("/search/idea", method: "get", class: "navbar-form navbar-left") do %>
+        <div class="form-group">
+          <%= text_field_tag :q, nil, placeholder: 'Search an idea', class: 'form-control' %>
+          <%= submit_tag "Search", class: "btn btn-default" %>
+        </div>
+      <% end %>
       
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
