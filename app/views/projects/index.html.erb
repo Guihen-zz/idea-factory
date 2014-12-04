@@ -1,6 +1,8 @@
 <div class="display">
 	<% if user_signed_in? %>
 	  <%= link_to 'My projects', '#my_projects' %> | <%= link_to 'Other projects', '#projects' %>
+	  <%= link_to 'New project ...', new_project_path, id: 'new_project_button', class: 'btn btn-primary' %>
+	  <br>
 	  <h1 id='my_projects'>My Projects</h1>
 	  <%= render partial: "projects", locals: { projects: @my_projects, my_projects:  true } %>
 	  <br>
