@@ -1,0 +1,14 @@
+<div class="display">
+	<% if @ideas.empty? %>
+		<h1>Sorry. We couldn't find any idea matching your query.</h1>
+		<h3>Why not create your own?</h3>
+		<br>
+		<p><%= "User searched for: '#{@query}'" %></p>
+	<% else %>
+		<h1>Searching for ideas...</h1>
+		<br>
+		<p><%= "User searched for: '#{@query}'" %></p>
+		<%= render partial: "ideas/ideas", locals: { ideas: @ideas, my_ideas:  false } %>
+	<% end %>
+</div>
+
