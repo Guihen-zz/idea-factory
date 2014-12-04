@@ -10,8 +10,12 @@
 	margin-top: 60px;
 }
 
-.jumbotron p {
+.jumbotron h1 {
 	color: white;
+}
+
+.jumbotron p {
+	color: #bdc3c7;
 }
 
 p#notice {
@@ -24,6 +28,7 @@ p#notice {
 
 body {
 	background: url('/assets/bg.jpg');
+	background-color: #34495e;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
