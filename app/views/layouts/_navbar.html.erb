@@ -26,6 +26,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
+          <li><%= link_to current_user.email, :ideas %></li>
           <li><%= link_to 'Settings', :edit_user_registration %></li>
           <li id="logout_link"><%= link_to 'Logout',  :destroy_user_session, data: { confirm: "Are you sure?" }, method: 'delete' %></li>
         <% else %>
