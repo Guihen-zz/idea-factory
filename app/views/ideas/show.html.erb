@@ -1,46 +1,46 @@
+<div class="display">
+  <p>
+    <strong>Name:</strong>
+    <%= @idea.name %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @idea.name %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @idea.description %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @idea.description %>
-</p>
+  <p>
+    <strong>Platform:</strong>
+    <%= @idea.platform %>
+  </p>
 
-<p>
-  <strong>Platform:</strong>
-  <%= @idea.platform %>
-</p>
+  <p>
+    <strong>Architecture:</strong>
+    <%= @idea.architecture %>
+  </p>
 
-<p>
-  <strong>Architecture:</strong>
-  <%= @idea.architecture %>
-</p>
+  <p>
+    <strong>Tools:</strong>
+    <%= @idea.tools %>
+  </p>
 
-<p>
-  <strong>Tools:</strong>
-  <%= @idea.tools %>
-</p>
+  <p>
+    <strong>Hardware:</strong>
+    <%= @idea.hardware %>
+  </p>
 
-<p>
-  <strong>Hardware:</strong>
-  <%= @idea.hardware %>
-</p>
+  <p>
+    <strong>Effort:</strong>
+    <%= @idea.effort %>
+  </p>
 
-<p>
-  <strong>Effort:</strong>
-  <%= @idea.effort %>
-</p>
+  <p>
+    <strong>Deadline:</strong>
+    <%= @idea.deadline %>
+  </p>
 
-<p>
-  <strong>Deadline:</strong>
-  <%= @idea.deadline %>
-</p>
-
-<% if user_signed_in? %>
-  <%= link_to 'Edit', edit_idea_path(@idea), class: 'btn btn-default' %> |
-<% end %>
-<%= link_to 'Back', ideas_path, class: 'btn btn-default' %>
-
+  <% if user_signed_in? %>
+    <%= link_to 'Edit', edit_idea_path(@idea), class: 'btn btn-default' %> |
+  <% end %>
+  <%= link_to 'Back', ideas_path, class: 'btn btn-default' %>
+</div>

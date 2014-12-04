@@ -1,16 +1,16 @@
+<div class="display">
+	<p>
+		<strong>Name:</strong>
+		<%= @project.name %>
+	</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @project.status %>
-</p>
+	<p>
+	  <strong>Status:</strong>
+	  <%= @project.status %>
+	</p>
 
 <% if user_signed_in? %>
   <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-default' %> |
 <% end %>
-<%= link_to 'Back', projects_path, class: 'btn btn-default' %>
-
+<%= link_to 'Back', projects_path, class: 'btn btn-default' %>	
+</div>
