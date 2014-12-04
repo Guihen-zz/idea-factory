@@ -1,16 +1,14 @@
-<% if user_signed_in? %>
-  <div class="display">
-  <h2>My Projects</h2>
-  <%= render partial: "projects", locals: { projects: @my_projects, my_projects:  true } %>
-  <br>
-  <h2>Other Projects</h2>
-<% else %>
-	<h2>All Projects</h2>
-<% end %>
+<div class="display">
+	<% if user_signed_in? %>
+	  <%= link_to 'My projects', '#my_projects' %> | <%= link_to 'Other projects', '#projects' %>
+	  <h1 id='my_projects'>My Projects</h1>
+	  <%= render partial: "projects", locals: { projects: @my_projects, my_projects:  true } %>
+	  <br>
+	  <h1 id='projects'>Other Projects</h1>
+	<% else %>
+		<h1 id='projects'>All Projects</h1>
+	<% end %>
 
-<%= render partial: "projects", locals: { projects: @projects, my_projects:  false } %>
+	<%= render partial: "projects", locals: { projects: @projects, my_projects:  false } %>
 </div>
 <br>
-<% if user_signed_in? %>
-  <%= link_to 'New project ...', new_project_path, class: 'btn btn-primary' %>
-<% end %>

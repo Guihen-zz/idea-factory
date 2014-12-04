@@ -1,18 +1,16 @@
-
-<% if user_signed_in? %>
 <div class="display">
-  <h2>My Ideas</h2>
-  <%= render partial: "ideas", locals: { ideas: @my_ideas, my_ideas:  true } %>
-  <br>
-  <h2>Other Ideas</h2>
-<% else %>
-  <h2>All Ideas</h2>
-<% end %>
+	<% if user_signed_in? %>
+		<%= link_to 'My ideas', '#my_ideas' %> | <%= link_to 'Other ideas', '#ideas' %>
+		<%= link_to 'New idea ...', new_idea_path, id: 'new_idea_button', class: 'btn btn-primary' %>
+		<br>
+		<h1 id='my_ideas'>My Ideas</h1>
+		<%= render partial: "ideas", locals: { ideas: @my_ideas, my_ideas:  true } %>
+		<br>
+		<h1 id='ideas'>Other Ideas</h1>
+	<% else %>
+		<h1 id='ideas'>All Ideas</h1>
+	<% end %>
 
-<%= render partial: "ideas", locals: { ideas: @ideas, my_ideas:  false } %>
+	<%= render partial: "ideas", locals: { ideas: @ideas, my_ideas:  false } %>
 </div>
 <br>
-
-<% if user_signed_in? %>
-  <%= link_to 'New idea ...', new_idea_path, class: 'btn btn-primary' %>
-<% end %>
