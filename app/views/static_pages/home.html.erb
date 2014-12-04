@@ -6,5 +6,9 @@
   <p>That's why we brought to you Idea Factory. We truly hope you enjoy it!</p>
  
   <%= link_to "Share your idea!", :ideas,    class: 'btn btn-primary' %>
-  <%= link_to "Start a project!", :projects, class: 'btn btn-default' %>
+  <% if user_signed_in?%>
+	<%= link_to "Start a project!", :projects, class: 'btn btn-default' %>
+  <% else %>
+	<%= link_to 'Login', :new_user_session, class: 'btn btn-default'  %>
+  <% end %>
 </div>
