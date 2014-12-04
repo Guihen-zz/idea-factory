@@ -11,7 +11,8 @@ class SearchController < ApplicationController
   	if @query == ""
   		redirect_to :back
   	else
-  		@ideas   = Idea.where('name LIKE ? OR description LIKE ?', "%#{@query}%", "%#{@query}%")
+  		@ideas   = Idea.where('name LIKE ? OR description LIKE ? OR platform LIKE ? or tools LIKE ?',
+  			"%#{@query}%", "%#{@query}%", "%#{@query}%", "%#{@query}%")
   		@my_ideas    = @ideas.where(user_id: current_user)
   		@other_ideas = @ideas - @my_ideas
 
