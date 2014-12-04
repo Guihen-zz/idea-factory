@@ -5,10 +5,18 @@
 		<br>
 		<p><%= "User searched for: '#{@query}'" %></p>
 	<% else %>
-		<h1>Searching for ideas...</h1>
+		<h1><%= "Found #{@ideas.size} ideas." %></h1>
 		<br>
 		<p><%= "User searched for: '#{@query}'" %></p>
-		<%= render partial: "ideas/ideas", locals: { ideas: @ideas, my_ideas:  false } %>
+		<br>
+		<% if not @my_ideas.empty? %>
+			<h2 id='my_ideas'>My Ideas</h2>
+			<%= render partial: "ideas/ideas", locals: { ideas: @my_ideas, my_ideas:  true } %>
+		<% end %>
+		<% if not @other_ideas.empty? %>
+			<h2 id='other_ideas'>Other Ideas</h2>
+			<%= render partial: "ideas/ideas", locals: { ideas: @other_ideas, my_ideas:  false } %>
+		<% end %>
 	<% end %>
 </div>
 
