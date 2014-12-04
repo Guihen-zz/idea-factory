@@ -1,11 +1,11 @@
 <div class="display">
-	<% if @ideas.empty? %>
+	<% if @ideas.empty? and @projects.empty? %>
 		<h1>Sorry. We couldn't find any idea matching your query.</h1>
 		<h3>Why not create your own?</h3>
 		<br>
 		<p><%= "User searched for: '#{@query}'" %></p>
 	<% else %>
-		<h1><%= "Found #{@ideas.size} ideas." %></h1>
+		<h1><%= "Found #{@ideas.size} idea(s) and #{@projects.size} project(s)." %></h1>
 		<br>
 		<p><%= "User searched for: '#{@query}'" %></p>
 		<br>
@@ -16,6 +16,10 @@
 		<% if not @other_ideas.empty? %>
 			<h2 id='other_ideas'>Other Ideas</h2>
 			<%= render partial: "ideas/ideas", locals: { ideas: @other_ideas, my_ideas:  false } %>
+		<% end %>
+		<% if not @projects.empty? %>
+			<h2 id='my_projects'>Projects</h2>
+			<%= render partial: "projects/projects", locals: { projects: @projects, my_projects:  false } %>
 		<% end %>
 	<% end %>
 </div>
