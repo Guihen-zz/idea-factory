@@ -67,6 +67,10 @@ describe IdeasController do
         expect(response).to redirect_to(ideas_path)
       end
 
+      context 'when there is a project based in this idea' do
+        pending 'discover how to test redirect_to :back'
+      end
+
     end
   end
 end

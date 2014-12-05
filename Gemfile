@@ -53,7 +53,6 @@ group :development, :test do
   gem 'database_cleaner', '~> 1.3.0' # Factory girl suggest: Strategies for cleaning databases. Can be used to ensure a clean state for testing.
   gem 'capybara', '~> 2.4.4' # Capybara is an integration testing tool for rack based web applications. It simulates how a user would interact with a website
   gem 'simplecov', '~> 0.9.1', require: false # Code coverage for Ruby 1.9+ with a powerful configuration library and automatic merging of coverage across test suites
-  gem 'mocha', require: 'mocha/api' # Mocking and stubbing library with JMock/SchMock syntax, which allows mocking and stubbing of methods on real (non-mock) classes.
 end
 
 gem 'devise' # Devise is a flexible authentication solution for Rails based on Warden.
