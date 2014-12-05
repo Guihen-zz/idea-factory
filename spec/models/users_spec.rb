@@ -35,9 +35,8 @@ describe User do
 
           expect(jane).not_to be_valid
         end
-      end #context
+      end
 
     end
-
   end
 end
