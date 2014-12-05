@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   get 'search/idea'
 
-  get 'search/project'
-
   get 'static_pages/home', as: :home
 
   # root 'ideas#index'

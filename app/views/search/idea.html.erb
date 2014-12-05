@@ -8,18 +8,29 @@
 		<h1><%= "Found #{@ideas.size} idea(s) and #{@projects.size} project(s)." %></h1>
 		<br>
 		<p><%= "User searched for: '#{@query}'" %></p>
+		<%= link_to 'My ideas', '#my_ideas' %> | <%= link_to 'Other ideas', '#ideas' %> |
+		<%= link_to 'My projects', '#my_projects' %> | <%= link_to 'Other projects', '#projects' %>
 		<br>
+		<br>
+
 		<% if not @my_ideas.empty? %>
-			<h2 id='my_ideas'>My Ideas</h2>
+			<h3 id='my_ideas'>My Ideas</h3>
 			<%= render partial: "ideas/ideas", locals: { ideas: @my_ideas, my_ideas:  true } %>
 		<% end %>
+
+		<% if not @my_projects.empty? %>
+			<h3 id='my_projects'>My Projects</h3>
+			<%= render partial: "projects/projects", locals: { projects: @my_projects, my_projects:  true } %>
+		<% end %>
+
 		<% if not @other_ideas.empty? %>
-			<h2 id='other_ideas'>Other Ideas</h2>
+			<h3 id='other_ideas'>Ideas from other people</h3>
 			<%= render partial: "ideas/ideas", locals: { ideas: @other_ideas, my_ideas:  false } %>
 		<% end %>
-		<% if not @projects.empty? %>
-			<h2 id='my_projects'>Projects</h2>
-			<%= render partial: "projects/projects", locals: { projects: @projects, my_projects:  false } %>
+
+		<% if not @other_projects.empty? %>
+			<h3 id='other_projects'>Projects from other people</h3>
+			<%= render partial: "projects/projects", locals: { projects: @other_projects, my_projects:  false } %>
 		<% end %>
 	<% end %>
 </div>
