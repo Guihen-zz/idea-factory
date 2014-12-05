@@ -38,8 +38,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-# Used by heroku
-gem 'rails_12factor', group: :production
+gem 'rails_12factor', group: :production # Used by heroku
 
 # Twitter bootstrap: Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
 gem 'bootstrap-sass', '~> 3.3.1.0'
@@ -47,10 +46,11 @@ gem 'bootstrap-sass', '~> 3.3.1.0'
 # Twitter boostrap suggest: is a tool to parse CSS and add vendor prefixes to CSS rules using values from the Can I Use. This gem provides Ruby and Ruby on Rails integration with this JavaScript tool.
 gem 'autoprefixer-rails'
 
-# Gem to unit testing
+# Gems to testing
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
+  gem 'factory_girl', '~> 4.5.0' # factory_girl provides a framework and DSL for defining and using factories - less error-prone, more explicit, and all-around easier to work with than fixtures.
+  gem 'database_cleaner', '~> 1.3.0' # Factory girl suggest: Strategies for cleaning databases. Can be used to ensure a clean state for testing.
 end
 
-# Devise is a flexible authentication solution for Rails based on Warden.
-gem 'devise'
+gem 'devise' # Devise is a flexible authentication solution for Rails based on Warden.

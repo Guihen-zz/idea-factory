@@ -14,7 +14,26 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'factory_girl'
+
 RSpec.configure do |config|
+
+  config.include FactoryGirl::Syntax::Methods # Factory to create fixtures
+
+  # additional factory_girl configuration
+  config.before(:suite) do
+    begin
+      DatabaseCleaner.start
+      FactoryGirl.lint
+    ensure
+      DatabaseCleaner.clean
+    end
+  end
+
+  config.before(:all) do
+    FactoryGirl.reload
+  end
+
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin
