@@ -26,7 +26,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    @project.users << current_user
+    current_user.projects << @project
     @project.save
     respond_with(@project)
   end
